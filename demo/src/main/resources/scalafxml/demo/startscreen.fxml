@@ -5,7 +5,112 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<?import javafx.scene.text.Font?>
 <VBox maxHeight="-Infinity" prefHeight="-1.0" prefWidth="401.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="scalafxml.demo.StartScreenPresenter">
+  <VBox id="calculator" prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <Label id="display" fx:id="display1" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="600.0" textAlignment="RIGHT">
+      <font>
+        <Font size="36.0" />
+      </font>
+    </Label>
+    <Label id="display" fx:id="display" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="600.0">
+      <font>
+        <Font size="36.0" />
+      </font></Label>
+    <HBox>
+      <Button prefHeight="100.0" prefWidth="150.0" text="C" onAction="#processOperators">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button prefHeight="100.0" prefWidth="150.0" text="(" onAction="#processOperators">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button prefHeight="100.0" prefWidth="150.0" text=")" onAction="#processOperators">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button prefHeight="100.0" prefWidth="150.0" styleClass="op" text="/" onAction="#processOperators">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+    </HBox>
+    <HBox>
+      <Button prefHeight="100.0" prefWidth="150.0" text="7" onAction="#processNumbers">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button prefHeight="100.0" prefWidth="150.0" text="8" onAction="#processNumbers">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button prefHeight="100.0" prefWidth="150.0" text="9" onAction="#processNumbers">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button prefHeight="100.0" prefWidth="150.0" styleClass="op" text="*" onAction="#processOperators">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+    </HBox>
+    <HBox>
+      <Button prefHeight="100.0" prefWidth="150.0" text="4" onAction="#processNumbers">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button prefHeight="100.0" prefWidth="150.0" text="5" onAction="#processNumbers">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button prefHeight="100.0" prefWidth="150.0" text="6" onAction="#processNumbers">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button prefHeight="100.0" prefWidth="150.0" styleClass="op" text="-" onAction="#processOperators">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+    </HBox>
+    <HBox>
+      <Button prefHeight="100.0" prefWidth="150.0" text="1" onAction="#processNumbers">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button prefHeight="100.0" prefWidth="150.0" text="2" onAction="#processNumbers">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button prefHeight="100.0" prefWidth="150.0" text="3" onAction="#processNumbers">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button prefHeight="100.0" prefWidth="150.0" styleClass="op" text="+" onAction="#processOperators">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+    </HBox>
+    <HBox>
+      <Button prefHeight="100.0" prefWidth="150.0" styleClass="plus_minus" text="+/-" onAction="#processOperators">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button prefHeight="100.0" prefWidth="150.0" text="0" onAction="#processNumbers">
+        <font>
+          <Font size="36.0" />
+        </font></Button>
+      <Button layoutX="160.0" layoutY="10.0" prefHeight="100.0" prefWidth="150.0" text="." onAction="#processNumbers">
+        <font>
+          <Font size="36.0" />
+        </font>
+      </Button>
+      <Button layoutX="311.0" layoutY="10.0" prefHeight="100.0" prefWidth="150.0" styleClass="op" text="=" onAction="#processOperators">
+        <font>
+          <Font size="36.0" />
+        </font>
+      </Button>
+    </HBox>
+  </VBox>
+
   <children>
     <TitledPane animated="false" text="%TEXT_CREATE_NEW_PHOTO_BOOK">
       <content>
@@ -13,7 +118,7 @@
           <children>
             <Button fx:id="btCreate" mnemonicParsing="false" onAction="#onCreate" text="%TEXT_CREATE" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="15.0" />
             <TextField fx:id="newPhotoBookPath" layoutY="15.0" prefWidth="298.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="87.0" />
-            <Button mnemonicParsing="false" onAction="#onBrowse" text="%TEXT_BROWSE" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="16.0" />
+            <Button mnemonicParsing="false" onAction="#processNumbers" text="%TEXT_BROWSE" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="16.0" />
           </children>
         </AnchorPane>
       </content>
